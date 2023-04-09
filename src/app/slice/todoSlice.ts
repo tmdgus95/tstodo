@@ -22,6 +22,9 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
+        onAdd: (state, action) => {
+            state.value.push(action.payload);
+        },
         // increment: (state) => {
         //     state.value += 1;
         // },
@@ -31,6 +34,6 @@ export const todoSlice = createSlice({
     },
 });
 
-export const {} = todoSlice.actions;
+export const { onAdd } = todoSlice.actions;
 
 export default todoSlice.reducer;
