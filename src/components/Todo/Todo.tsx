@@ -2,6 +2,7 @@ import React from 'react';
 import { TodoType, onDelete, onUpdate } from '../../app/slice/todoSlice';
 import { FaTrash } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
+import styles from './Todo.module.css';
 
 type Props = {
     todo: TodoType;
@@ -20,17 +21,22 @@ export default function Todo({ todo }: Props) {
         dispatch(onDelete(todo));
     };
     return (
-        <li>
+        <li className={styles.todo}>
             <input
+                className={styles.checkbox}
                 type='checkbox'
                 id='checkbox'
                 checked={status === 'completed'}
                 onChange={handleChange}
             />
-            <label htmlFor='checkbox'>{text}</label>
-            <button onClick={handleDelete}>
-                <FaTrash />
-            </button>
+            <label htmlFor='checkbox' className={styles.text}>
+                {text}
+            </label>
+            <span className={styles.icon}>
+                <button onClick={handleDelete} className={styles.button}>
+                    <FaTrash />
+                </button>
+            </span>
         </li>
     );
 }

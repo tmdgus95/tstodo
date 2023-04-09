@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { onAdd } from '../../app/slice/todoSlice';
 import { v4 as uuidv4 } from 'uuid';
+import styles from './AddTodo.module.css';
 
 export default function AddTodo() {
     const dispatch = useDispatch();
@@ -18,14 +19,15 @@ export default function AddTodo() {
         setText(e.target.value);
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <input
+                className={styles.input}
                 type='text'
                 placeholder='Add Todo'
                 value={text}
                 onChange={handleChange}
             />
-            <button>Add</button>
+            <button className={styles.button}>Add</button>
         </form>
     );
 }
