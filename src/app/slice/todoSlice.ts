@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-interface Todo {
+import { v4 as uuidv4 } from 'uuid';
+export interface TodoType {
     id: string;
     text: string;
     status: 'active' | 'completed';
 }
 
 export interface TodoState {
-    value: Todo[];
+    value: TodoType[];
 }
 
 const initialState: TodoState = {
@@ -22,18 +22,23 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        onAdd: (state, action) => {
+        onAdd: (state, action: PayloadAction<TodoType>) => {
             state.value.push(action.payload);
         },
-        // increment: (state) => {
-        //     state.value += 1;
-        // },
-        // incrementByAmount: (state, action: PayloadAction<number>) => {
-        //     state.value += action.payload;
-        // },
+        onUpdate: (state, action: PayloadAction<TodoType>) => {
+            state.value = state.value.map((todo) =>
+                todo.id === action.payload.id ? action.payload : todo
+            );
+            console.log(action.payload);
+        },
+        onDelete: (state, action: PayloadAction<TodoType>) => {
+            state.value = state.value.filter(
+                (todo) => todo.id !== action.payload.id
+            );
+        },
     },
 });
 
-export const { onAdd } = todoSlice.actions;
+export const { onAdd, onUpdate, onDelete } = todoSlice.actions;
 
 export default todoSlice.reducer;
