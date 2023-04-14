@@ -6,7 +6,7 @@ import styles from './Header.module.css';
 
 export default function Header() {
     const dispatch = useDispatch();
-    const filters = ['all', 'active', 'competed'];
+    const filters = ['all', 'active', 'completed'];
     const nowfilter = useSelector((state: RootState) => state.filter.value);
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         const selectedfilter = e.currentTarget.textContent as FilterValue;
