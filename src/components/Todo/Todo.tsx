@@ -10,7 +10,7 @@ type Props = {
 
 export default function Todo({ todo }: Props) {
     const dispatch = useDispatch();
-    const { status, text } = todo;
+    const { status, text, id } = todo;
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const status: 'active' | 'completed' = e.target.checked
             ? 'completed'
@@ -25,11 +25,11 @@ export default function Todo({ todo }: Props) {
             <input
                 className={styles.checkbox}
                 type='checkbox'
-                id='checkbox'
+                id={id}
                 checked={status === 'completed'}
                 onChange={handleChange}
             />
-            <label htmlFor='checkbox' className={styles.text}>
+            <label htmlFor={id} className={styles.text}>
                 {text}
             </label>
             <span className={styles.icon}>

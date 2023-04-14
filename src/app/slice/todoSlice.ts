@@ -10,12 +10,9 @@ export interface TodoType {
 export interface TodoState {
     value: TodoType[];
 }
-
+const storedTodos = localStorage.getItem('todos');
 const initialState: TodoState = {
-    value: [
-        { id: '123', text: '장보기', status: 'active' },
-        { id: '124', text: '공부하기', status: 'active' },
-    ],
+    value: storedTodos ? JSON.parse(storedTodos) : [],
 };
 
 export const todoSlice = createSlice({
@@ -29,7 +26,6 @@ export const todoSlice = createSlice({
             state.value = state.value.map((todo) =>
                 todo.id === action.payload.id ? action.payload : todo
             );
-            console.log(action.payload);
         },
         onDelete: (state, action: PayloadAction<TodoType>) => {
             state.value = state.value.filter(
