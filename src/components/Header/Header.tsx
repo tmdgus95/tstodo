@@ -32,7 +32,7 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <button onClick={handleDarkMode}>
+            <button onClick={handleDarkMode} className={styles.toggle}>
                 {!darkmode && <HiMoon />}
                 {darkmode && <HiSun />}
             </button>
