@@ -18,12 +18,6 @@ export const filterSlice = createSlice({
         onFilterChange: (state, action: PayloadAction<FilterValue>) => {
             state.value = action.payload;
         },
-        // onUpdate: (state, action: PayloadAction<TodoType>) => {
-        //     state.value = state.value.map((todo) =>
-        //         todo.id === action.payload.id ? action.payload : todo
-        //     );
-        //     console.log(action.payload);
-        // },
     },
 });
 
