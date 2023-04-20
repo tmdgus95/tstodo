@@ -48,9 +48,9 @@ $ npm start or yarn start
 
 |        메인 페이지        |         다크 모드         |
 | :-----------------------: | :-----------------------: |
-| <img width="329" src=""/> | <img width="329" src=""/> |
+| <img width="329" src="https://user-images.githubusercontent.com/118142479/233355562-b4efa262-ae79-492b-941f-a31cf21afa0d.png"/> | <img width="329" src="https://user-images.githubusercontent.com/118142479/233355547-e832fa8c-8c2e-4a93-aa6d-30e413245081.gif"/> |
 |        추가 · 삭제        |         필터 기능         |
-| <img width="329" src=""/> | <img width="329" src=""/> |
+| <img width="329" src="https://user-images.githubusercontent.com/118142479/233355551-289a37ce-203e-4d31-ae88-2139ed9c2f53.gif"/> | <img width="329" src="https://user-images.githubusercontent.com/118142479/233355552-ac0626c9-26d7-4ee1-b554-e14aed1068ca.gif"/> |
 
 ## 주요 기능 📦
 
