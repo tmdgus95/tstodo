@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { useEffect } from 'react';
 
 export interface Darkmode {
     value: boolean;
